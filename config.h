@@ -82,6 +82,9 @@ char *termname = "st-256color";
  */
 unsigned int tabspaces = 8;
 
+/* background opacity */
+float alpha = 0.80;
+
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
@@ -165,16 +168,6 @@ static MouseShortcut mshortcuts[] = {
 /* Internal keyboard shortcuts. */
 #define MODKEY Mod1Mask
 #define TERMMOD (ControlMask|ShiftMask)
-
-MouseKey mkeys[] = {
-    /* button       masks       function        argument */
-    { Button4,      ShiftMask,  kscrollup,      {.i = 1} },
-    { Button5,      ShiftMask,  kscrolldown,    {.i = 1} },
-    { Button4,      MODKEY,     kscrollup,      {.i = 1} },
-    { Button5,      MODKEY,     kscrolldown,    {.i = 1} },
-    { Button4,      TERMMOD,    zoom,           {.f = +1} },
-    { Button5,      TERMMOD,    zoom,           {.f = -1} },
-};
 
 static Shortcut shortcuts[] = {
 	/* mask                 keysym          function        argument */
